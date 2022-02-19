@@ -12,9 +12,9 @@ module.exports = {
   author: 'Julien Bras',
 
   // open graph metadata (optional)
-  description: 'Example site description',
-  socialImageTitle: 'Transitive Bullshit',
-  socialImageSubtitle: 'Hello World! 👋',
+  description: 'Digital garden 🪴 - Julien Bras',
+  socialImageTitle: 'Julien Bras',
+  socialImageSubtitle: 'Digital garden 🪴',
 
   // social usernames (optional)
   twitter: '_julbrs',
