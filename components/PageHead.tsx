@@ -37,7 +37,7 @@ export const PageHead: React.FC<types.PageProps> = ({ site }) => {
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', ${config.gaCode}, {
+            gtag('config', '${config.gaCode}', {
               page_path: window.location.pathname,
             });
           `
