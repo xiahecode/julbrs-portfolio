@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import * as React from 'react'
 import * as types from 'lib/types'
+import * as config from 'lib/config'
 
 // TODO: remove duplication between PageHead and NotionPage Head
 
@@ -23,6 +24,26 @@ export const PageHead: React.FC<types.PageProps> = ({ site }) => {
 
       <meta name='theme-color' content='#EB625A' />
       <meta property='og:type' content='website' />
+      {config.gaCode && (
+        <script
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=${config.gaCode}`}
+        />
+      )}
+      {config.gaCode && (
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', ${config.gaCode}, {
+              page_path: window.location.pathname,
+            });
+          `
+          }}
+        />
+      )}
     </Head>
   )
 }
