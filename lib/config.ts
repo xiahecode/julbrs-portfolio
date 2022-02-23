@@ -115,6 +115,8 @@ export const fathomId = isDev ? null : process.env.NEXT_PUBLIC_FATHOM_ID
 
 export const gaCode = isDev ? null : process.env.NEXT_PUBLIC_GA_CODE
 
+export const gcUrl = isDev ? null : process.env.NEXT_PUBLIC_GC_URL
+
 export const fathomConfig = fathomId
   ? {
       excludedDomains: ['localhost', 'localhost:3000']

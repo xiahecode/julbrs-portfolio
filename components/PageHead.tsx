@@ -24,6 +24,14 @@ export const PageHead: React.FC<types.PageProps> = ({ site }) => {
 
       <meta name='theme-color' content='#EB625A' />
       <meta property='og:type' content='website' />
+      {/* Goat Counter analytics */}
+      {config.gcUrl && (
+        <script
+          data-goatcounter={config.gcUrl}
+          async
+          src='//gc.zgo.at/count.js'
+        ></script>
+      )}
       {config.gaCode && (
         <script
           async
