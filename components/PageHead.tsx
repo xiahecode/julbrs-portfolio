@@ -32,26 +32,6 @@ export const PageHead: React.FC<types.PageProps> = ({ site }) => {
           src='//gc.zgo.at/count.js'
         ></script>
       )}
-      {config.gaCode && (
-        <script
-          async
-          src={`https://www.googletagmanager.com/gtag/js?id=${config.gaCode}`}
-        />
-      )}
-      {config.gaCode && (
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${config.gaCode}', {
-              page_path: window.location.pathname,
-            });
-          `
-          }}
-        />
-      )}
     </Head>
   )
 }
