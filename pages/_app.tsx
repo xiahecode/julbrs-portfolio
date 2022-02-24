@@ -41,46 +41,34 @@ import { gcUrl } from 'lib/config'
 
 export default function App({ Component, pageProps }) {
   const router = useRouter()
-  
-    useEffect(
-      function sendGoatCounterEventsOnRoute() {
-        const handleRouteChange = (path) => {
-          ;(window as any)?.goatcounter?.count?.({
-            path
-          })
-        }
-        router.events.on('routeChangeComplete', handleRouteChange)
-        return () => {
-          router.events.off('routeChangeComplete', handleRouteChange)
-        }
-      },
-      [router.events]
-    )
-  }
+
+  useEffect(
+    function sendGoatCounterEventsOnRoute() {
+      const handleRouteChange = (path) => {
+        ;(window as any)?.goatcounter?.count?.({
+          path
+        })
+      }
+      router.events.on('routeChangeComplete', handleRouteChange)
+      return () => {
+        router.events.off('routeChangeComplete', handleRouteChange)
+      }
+    },
+    [router.events]
+  )
 
   return (
     <>
       <Component {...pageProps} />
       {/* GoatCounter */}
-      {gcUrl && <Script
-        async
-        data-goatcounter={gcUrl}
-        src='//gc.zgo.at/count.js'
-        strategy='afterInteractive'
-      />}
+      {gcUrl && (
+        <Script
+          async
+          data-goatcounter={gcUrl}
+          src='//gc.zgo.at/count.js'
+          strategy='afterInteractive'
+        />
+      )}
     </>
   )
-
-  {
-    /* Goat Counter analytics */
-  }
-  {
-    config.gcUrl && (
-      <script
-        data-goatcounter={config.gcUrl}
-        async
-        src='//gc.zgo.at/count.js'
-      ></script>
-    )
-  }
 }
