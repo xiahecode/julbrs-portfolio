@@ -34,8 +34,53 @@ import 'prismjs/components/prism-javascript'
 import 'prismjs/components/prism-typescript'
 import 'prismjs/components/prism-bash'
 
-import React from 'react'
+import React, { useEffect } from 'react'
+import Script from 'next/script'
+import { useRouter } from 'next/router'
+import { gcUrl } from 'lib/config'
 
 export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  const router = useRouter()
+  
+    useEffect(
+      function sendGoatCounterEventsOnRoute() {
+        const handleRouteChange = (path) => {
+          ;(window as any)?.goatcounter?.count?.({
+            path
+          })
+        }
+        router.events.on('routeChangeComplete', handleRouteChange)
+        return () => {
+          router.events.off('routeChangeComplete', handleRouteChange)
+        }
+      },
+      [router.events]
+    )
+  }
+
+  return (
+    <>
+      <Component {...pageProps} />
+      {/* GoatCounter */}
+      {gcUrl && <Script
+        async
+        data-goatcounter={gcUrl}
+        src='//gc.zgo.at/count.js'
+        strategy='afterInteractive'
+      />}
+    </>
+  )
+
+  {
+    /* Goat Counter analytics */
+  }
+  {
+    config.gcUrl && (
+      <script
+        data-goatcounter={config.gcUrl}
+        async
+        src='//gc.zgo.at/count.js'
+      ></script>
+    )
+  }
 }
