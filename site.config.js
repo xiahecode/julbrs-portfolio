@@ -1,25 +1,25 @@
 module.exports = {
   // where it all starts -- the site's root Notion page (required)
-  rootNotionPageId: 'b0d4be7921b6442eb5de616816d5c33c',
+  rootNotionPageId: '40fc8ca04bf3479387027072119fa433',
 
   // if you want to restrict pages to a single notion workspace (optional)
   // (this should be a Notion ID; see the docs for how to extract this)
   rootNotionSpaceId: null,
 
   // basic site info (required)
-  name: 'sidoine',
-  domain: 'sidoine.org',
-  author: 'Julien Bras',
+  name: '冬壮报销售',
+  domain: 'storedocs.wspost.cn',
+  author: 'W.S.Post',
 
   // open graph metadata (optional)
-  description: 'Digital garden 🪴 - Julien Bras',
-  socialImageTitle: 'Julien Bras',
-  socialImageSubtitle: 'Digital garden 🪴',
+  description: '',
+  socialImageTitle: '',
+  socialImageSubtitle: '',
 
   // social usernames (optional)
-  twitter: '_julbrs',
-  github: 'julbrs',
-  linkedin: 'julienbras',
+  twitter: '',
+  github: '',
+  linkedin: '',
 
   // default notion icon and cover images for site-wide consistency (optional)
   // page-specific values will override these site-wide defaults
