@@ -1,13 +1,13 @@
 module.exports = {
   // where it all starts -- the site's root Notion page (required)
-  rootNotionPageId: '40fc8ca04bf3479387027072119fa433',
+  rootNotionPageId: '171b4f6f69a94ff085aaf71f73dd9032',
 
   // if you want to restrict pages to a single notion workspace (optional)
   // (this should be a Notion ID; see the docs for how to extract this)
   rootNotionSpaceId: null,
 
   // basic site info (required)
-  name: '冬壮报销售',
+  name: '冬壮报首页',
   domain: 'storedocs.wspost.cn',
   author: 'W.S.Post',
 
