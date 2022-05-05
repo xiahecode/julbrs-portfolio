@@ -1,15 +1,15 @@
 module.exports = {
   // where it all starts -- the site's root Notion page (required)
-  rootNotionPageId: '171b4f6f69a94ff085aaf71f73dd9032',
+  rootNotionPageId: 'fe05f1f00ea942c0a7831c7afc0c0280',
 
   // if you want to restrict pages to a single notion workspace (optional)
   // (this should be a Notion ID; see the docs for how to extract this)
   rootNotionSpaceId: null,
 
   // basic site info (required)
-  name: '冬壮报首页',
-  domain: 'storedocs.wspost.cn',
-  author: 'W.S.Post',
+  name: 'Safe-Pages',
+  domain: 'safepages.pedu.ml',
+  author: 'Helium Lee',
 
   // open graph metadata (optional)
   description: '',
